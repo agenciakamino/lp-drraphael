@@ -1,0 +1,144 @@
+:root {
+  --container: 1280px;
+  --gutter: clamp(16px, 2.4vw, 36px);
+  --text: #fff;
+  --muted: #e7e1d6;
+  --line: #e7e1d6;
+  --bg-right: #b88961;
+}
+
+/* base */
+.diferenciais {
+  position: relative;
+  display: grid;
+  /* a coluna de texto tem largura controlada e responsiva */
+  grid-template-columns: 1fr 1fr;
+  min-height: clamp(520px, 70vh, 780px);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* esquerda: PNG único */
+.difs-media {
+  background: url('../img/diferenciais/doutor-cirurgia.png') right center /
+    cover no-repeat;
+}
+
+/* direita: textos + marca */
+.difs-content {
+  position: relative;
+  background: var(--bg-right);
+  color: var(--text);
+  display: grid;
+  align-content: center;
+  gap: clamp(12px, 2vw, 20px);
+  padding: clamp(24px, 6vw, 64px);
+}
+
+/* título e intro */
+.difs-title {
+  margin: 0;
+  font-size: clamp(30px, 3vw, 40px);
+}
+.difs-intro {
+  margin: 0 0 0.5rem 0;
+  max-width: 42ch;
+}
+
+/* lista */
+.difs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: clamp(12px, 1.8vw, 18px);
+  max-width: 58ch;
+}
+.difs-list li {
+  padding: 10px 0 16px;
+  border-bottom: 1px solid var(--line);
+}
+.difs-list li:last-child {
+  border-bottom: none;
+}
+
+.difs-list h3 {
+  margin-bottom: 0.5rem;
+  font-weight: normal;
+  font-size: clamp(28px, 2.5vw, 34px);
+}
+.difs-list p {
+  margin: 0;
+}
+
+/* ícone marrom (SVG) */
+.difs-mark {
+  position: absolute;
+  right: clamp(-40px, -2vw, -10px);
+  top: 55%;
+  transform: translateY(-50%);
+  width: clamp(180px, 26vw, 420px);
+  height: auto;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* ===== breakpoints ===== */
+
+/* reduce a largura de texto um pouco antes do stack */
+@media (max-width: 1200px) {
+  .diferenciais {
+    grid-template-columns: 1fr min(520px, 46vw);
+  }
+}
+
+/* tablet: afrouxa tipografia e ícone */
+@media (max-width: 980px) {
+  .diferenciais {
+    grid-template-columns: 1fr; /* empilha */
+    min-height: unset;
+  }
+  .difs-media {
+    order: -1;
+    height: 500px;
+    background-position: center top;
+    background-size: cover;
+  }
+  .difs-content {
+    padding: clamp(20px, 6vw, 40px);
+  }
+  .difs-mark {
+    right: -18px;
+    top: 50%;
+    width: clamp(140px, 40vw, 300px);
+    opacity: 0.28;
+  }
+}
+
+/* mobile pequeno: conforto de leitura */
+@media (max-width: 640px) {
+  .difs-intro {
+    max-width: 48ch;
+  }
+  .difs-list {
+    gap: 14px;
+  }
+  .difs-list h3 {
+    font-size: clamp(20px, 6vw, 24px);
+  }
+  .difs-mark {
+    right: -10px;
+    width: clamp(120px, 44vw, 240px);
+    opacity: 0.24;
+  }
+}
+
+/* ultra-small: garante respiro */
+@media (max-width: 420px) {
+  .difs-content {
+    padding: 20px;
+  }
+  .difs-media {
+    height: 220px;
+  }
+}

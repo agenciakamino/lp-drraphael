@@ -1,0 +1,125 @@
+/* cores (ajuste se tiver variáveis globais) */
+:root {
+  --deps-bg: #071736; /* navy do fundo */
+  --card-bg: #fff;
+  --text-card: #111;
+  --gold: #e3c99f; /* títulos/estrelas */
+  --gold-cta: #e6c38f;
+  --gold-cta-2: #b88961; /* fim do gradiente do botão */
+}
+
+/* seção */
+.depoimentos {
+  position: relative;
+  background: var(--deps-bg);
+  color: #fff;
+  padding: clamp(56px, 8vw, 120px) min(4vw, 24px) clamp(56px, 8vw, 120px);
+  overflow: hidden;
+}
+
+/* glows topo/rodapé */
+.depoimentos::before,
+.depoimentos::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1200px, 90%);
+  height: 180px;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(230, 195, 143, 0.35) 0%,
+    rgba(230, 195, 143, 0) 65%
+  );
+  filter: blur(6px);
+}
+.depoimentos::before {
+  top: -40px;
+  opacity: 0.4;
+}
+.depoimentos::after {
+  bottom: -60px;
+  opacity: 0.35;
+}
+
+.deps-head {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto clamp(28px, 4vw, 48px);
+}
+.deps-head h2 {
+  font-family: 'TT Ramillas Trl', serif;
+  font-size: clamp(28px, 4.4vw, 56px);
+  margin: 0 0 8px;
+  color: var(--gold);
+}
+.deps-head p {
+  margin: 0;
+  max-width: 66ch;
+  margin-inline: auto;
+  opacity: 0.9;
+}
+
+/* grid de cards */
+.deps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(240px, 1fr));
+  gap: clamp(16px, 2.4vw, 28px);
+  max-width: 1400px;
+  margin: 0 auto clamp(28px, 5vw, 48px);
+}
+
+.dep-card {
+  background: var(--card-bg);
+  color: var(--text-card);
+  border-radius: 22px;
+  padding: clamp(18px, 2.6vw, 28px);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.18);
+}
+.dep-card h3 {
+  font-family: 'TT Ramillas Trl', serif;
+  font-size: clamp(28px, 3.2vw, 48px);
+  line-height: 1.1;
+  margin: 0 0 8px;
+  color: var(--gold);
+}
+.dep-card p {
+  color: var(--text-card);
+}
+.stars {
+  display: flex;
+  gap: 6px;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.star {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.depoimentos button {
+  display: block;
+  margin: 0 auto;
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 1200px) {
+  .deps-grid {
+    grid-template-columns: repeat(3, minmax(240px, 1fr));
+  }
+}
+@media (max-width: 900px) {
+  .deps-grid {
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+  }
+}
+@media (max-width: 560px) {
+  .deps-grid {
+    grid-template-columns: 1fr;
+  }
+  .deps-cta {
+    width: 100%;
+  }
+}

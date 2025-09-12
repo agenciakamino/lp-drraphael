@@ -1,0 +1,43 @@
+:root {
+  --loc-bg: #071736; /* navy */
+  --loc-gold: #e3c99f; /* dourado do título */
+}
+
+/* seção */
+.localizacao {
+  background: var(--loc-bg);
+  color: #fff;
+  padding: clamp(48px, 10vw, 120px) 16px;
+  text-align: center;
+}
+
+/* container do texto */
+.loc-head {
+  max-width: 900px; /* largura do parágrafo como no mock */
+  margin: 0 auto;
+}
+
+.localizacao h2 {
+  margin: 0 0 10px;
+  font-family: 'TT Ramillas Trl', serif; /* mesma serif usada nas outras seções */
+  font-size: clamp(34px, 6vw, 64px);
+  line-height: 1.1;
+  color: var(--loc-gold);
+}
+
+.localizacao p {
+  margin: 0 auto;
+  max-width: 62ch;
+  font-weight: 500;
+  opacity: 0.95;
+}
+
+/* refininho mobile */
+@media (max-width: 560px) {
+  .localizacao {
+    padding-block: 56px;
+  }
+  .localizacao p {
+    padding-inline: 6px;
+  }
+}

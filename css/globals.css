@@ -1,0 +1,72 @@
+/* ====== Globais ====== */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Container com padding lateral responsivo */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 16px;
+}
+
+/* Tipografia base */
+h1,
+h2,
+h3 {
+  font-family: 'TT Ramillas Trl', sans-serif;
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 1;
+  margin: 0;
+}
+
+p {
+  font-family: 'Sora', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 18px;
+  color: #fff; /* padrão do site */
+}
+
+/* Utilitárias de cor (mantidas) */
+.gold {
+  color: #e6d3a0;
+}
+.gold-2 {
+  color: #b78b60;
+}
+
+/* Botão (link estilizado) — mantém seu visual */
+.btn {
+  display: inline-block;
+  font-size: 18px;
+  padding: 0.5rem 2rem;
+  background: linear-gradient(to right, #c59967 2%, #efd698);
+  border-radius: 0.1rem;
+  border: none;
+  color: #f7f7f7;
+  text-decoration: none;
+  transition: transform 0.06s ease, filter 0.2s ease;
+}
+.btn:focus-visible {
+  outline: 2px solid #b78b60;
+  outline-offset: 2px;
+}
+.btn:hover {
+  filter: brightness(0.95);
+}
+.btn:active {
+  transform: translateY(1px);
+}

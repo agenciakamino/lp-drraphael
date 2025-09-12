@@ -1,0 +1,16 @@
+.marquee {
+  overflow: hidden;
+  display: flex;
+  height: 40px;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.3);
+  align-items: center;
+  bottom: 0;
+}
+
+.marquee span {
+  font-size: 18pxrem;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #f7f7f7;
+}
