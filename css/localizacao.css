@@ -79,7 +79,9 @@
 }
 .loc-item a {
   color: inherit;
+  font-weight: normal;
   text-decoration: none;
+  font-family: 'Inter', sans-serif;
   border-bottom: 1px dotted rgba(255, 255, 255, 0.35);
 }
 .loc-item a:hover {
