@@ -106,12 +106,8 @@
   .cirurgia-text button {
     margin: 0 auto;
   }
-}
-
-@media (max-width: 640px) {
-  /* evita que a seta invada conteúdo em telas muito pequenas */
-  .cirurgia::before {
-    display: none;
-    content: none;
+  .copy p {
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 }

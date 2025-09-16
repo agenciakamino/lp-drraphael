@@ -8,7 +8,6 @@ img {
   background: url('../img/hero/background.jpg') no-repeat;
   background-size: cover;
   position: relative;
-  z-index: -1;
 }
 
 .hero-content {
@@ -39,7 +38,7 @@ img {
   align-self: end;
   display: flex;
   align-items: flex-end;
-  margin: 0 0 -3px 0;
+  margin: 0;
 }
 
 .raphael-hero img {
@@ -55,7 +54,7 @@ img {
   }
 
   .raphael-hero img {
-    max-width: 600px; /* só limita em telas médias+ */
+    max-width: 600px;
   }
 }
 @media (max-width: 950px) {

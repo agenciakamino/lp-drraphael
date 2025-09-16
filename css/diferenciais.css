@@ -4,7 +4,7 @@
   --text: #fff;
   --muted: #e7e1d6;
   --line: #e7e1d6;
-  --bg-right: #b88961;
+  --bg-right: #02143b;
 }
 
 /* base */
@@ -37,6 +37,7 @@
 
 /* título e intro */
 .difs-title {
+  color: #e3c58a;
   margin: 0;
   font-size: clamp(30px, 3vw, 40px);
 }
@@ -66,6 +67,7 @@
   margin-bottom: 0.5rem;
   font-weight: normal;
   font-size: clamp(28px, 2.5vw, 34px);
+  color: #e3c58a;
 }
 .difs-list p {
   margin: 0;
