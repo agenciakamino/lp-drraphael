@@ -99,15 +99,8 @@
   .cirurgia-text {
     padding-block: clamp(24px, 6vw, 48px);
     max-width: 680px; /* um pouco mais largo no single column */
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
-  .cirurgia-text button {
-    margin: 0 auto;
-  }
-  .copy p {
     margin-left: 1rem;
     margin-right: 1rem;
+    text-align: left;
   }
 }
