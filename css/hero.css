@@ -12,6 +12,7 @@ img {
 
 .hero-content {
   margin: 1rem;
+  margin-bottom: 3rem;
   align-self: center;
 }
 
@@ -20,21 +21,19 @@ img {
   grid-template-columns: 1fr;
   gap: 1rem;
   align-items: stretch;
+
+  /* ORDEM NO MOBILE (direita em cima, esquerda embaixo) */
+  grid-template-areas:
+    'right'
+    'left';
 }
 
-.hero-grid h1 {
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
+.hero-content {
+  grid-area: left;
 }
 
-.hero-grid p {
-  font-size: 18px;
-  max-width: 420px;
-  color: #000;
-}
-
-/* célula da imagem encosta no fundo */
 .raphael-hero {
+  grid-area: right;
   align-self: end;
   display: flex;
   align-items: flex-end;
@@ -47,20 +46,55 @@ img {
   max-width: 100%;
 }
 
+/* tipografia dentro do hero */
+.hero-grid h1 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+.hero-grid p {
+  font-size: 18px;
+  max-width: 420px;
+  color: #000;
+}
+
+/* LOGO padrão */
+.hero-logo {
+  display: block;
+  max-width: 180px;
+  margin-bottom: 1rem;
+}
+
 /* ====== Breakpoints (mobile-first) ====== */
 @media (min-width: 950px) {
   .hero-grid {
     grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'left right';
   }
 
   .raphael-hero img {
     max-width: 600px;
   }
 }
+
 @media (max-width: 950px) {
+  .hero {
+    position: relative;
+    padding-top: 100px; /* espaço para a logo no topo */
+  }
+
+  .hero-logo {
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    max-width: 200px;
+  }
+
   .hero-content {
     text-align: center;
   }
+
   .hero-content p {
     margin-left: auto;
     margin-right: auto;
