@@ -25,7 +25,7 @@ body {
 h1,
 h2,
 h3 {
-  font-family: 'TT Ramillas Trl', sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-weight: 400;
   font-size: 44px;
   line-height: 1;
@@ -33,7 +33,7 @@ h3 {
 }
 
 p {
-  font-family: 'Sora', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   font-size: 18px;

@@ -26,13 +26,12 @@
   display: grid;
   align-content: center;
   gap: clamp(16px, 2.8vw, 28px);
-  padding: clamp(24px, 6vw, 56px) clamp(16px, 4vw, 56px);
+  padding: clamp(24px, 6vw, 56px) 3rem clamp(24px, 6vw, 56px) 0.5rem;
   max-width: 900px;
 }
 
 .fecho-title {
   margin: 0;
-  font-family: 'TT Ramillas Trl', serif; /* ou sua serif */
   font-size: clamp(28px, 3.2vw, 38px);
   line-height: 1.12;
   color: #111;
@@ -40,9 +39,7 @@
 
 .fecho-lead {
   margin: 0;
-  font-family: 'TT Ramillas Trl', serif;
   font-size: clamp(28px, 3.2vw, 38px);
-
   line-height: 1.18;
   color: #111;
 }

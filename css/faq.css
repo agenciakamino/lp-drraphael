@@ -64,7 +64,6 @@
 }
 .faq-title {
   margin: 0;
-  font-family: 'TT Ramillas Trl', serif;
   font-size: clamp(34px, 5.4vw, 64px);
   line-height: 1.05;
 }
@@ -91,6 +90,7 @@
   padding: 16px 18px;
   font-weight: 800;
   color: var(--faq-accent);
+  font-family: 'Manrope', sans-serif;
 }
 .faq-item summary::-webkit-details-marker {
   display: none;

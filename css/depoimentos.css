@@ -49,7 +49,6 @@
   margin: 0 auto clamp(28px, 4vw, 48px);
 }
 .deps-head h2 {
-  font-family: 'TT Ramillas Trl', serif;
   font-size: clamp(28px, 4.4vw, 56px);
   margin: 0 0 8px;
   color: var(--gold);
@@ -78,7 +77,6 @@
   box-shadow: 0 8px 26px rgba(0, 0, 0, 0.18);
 }
 .dep-card h3 {
-  font-family: 'TT Ramillas Trl', serif;
   font-size: clamp(28px, 3.2vw, 48px);
   line-height: 1.1;
   margin: 0 0 8px;

@@ -19,7 +19,6 @@
 
 .localizacao h2 {
   margin: 0 0 10px;
-  font-family: 'TT Ramillas Trl', serif; /* mesma serif usada nas outras seções */
   font-size: clamp(34px, 6vw, 64px);
   line-height: 1.1;
   color: var(--loc-gold);
