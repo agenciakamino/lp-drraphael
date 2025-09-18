@@ -37,9 +37,13 @@
             rotina com segurança, vitalidade e total confidencialidade.
           </p>
 
-          <button class="btn" type="button">
+          <a
+            target="_blank"
+            class="btn"
+            href="https://wa.me/5548999578886?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20com%20o%20Dr.%20Raphael!"
+          >
             Cuidar da minha saúde com<br />segurança e discrição
-          </button>
+          </a>
         </header>
 
         <figure class="raphael-hero">
@@ -195,7 +199,12 @@
           disponível hoje.
         </p>
 
-        <button class="btn">Agendar avaliação com<br />Dr. Raphael</button>
+        <a
+          target="_blank"
+          class="btn"
+          href="https://wa.me/5548999578886?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20com%20o%20Dr.%20Raphael!"
+          >Agendar avaliação com<br />Dr. Raphael</a
+        >
       </div>
     </section>
 
@@ -537,7 +546,13 @@
         </div>
       </div>
 
-      <button class="btn">Agendar avaliação com<br />Dr. Raphael</button>
+      <a
+        target="_blank"
+        class="btn"
+        href="https://wa.me/5548999578886?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20com%20o%20Dr.%20Raphael!"
+      >
+        Agendar avaliação com<br />Dr. Raphael</a
+      >
     </section>
 
     <section class="faq" id="faq">
@@ -604,6 +619,16 @@
             <li class="loc-item">
               <h3>Florianópolis – Jurerê Medical Center</h3>
 
+              <p style="margin-bottom: 0.5rem">
+                <a
+                  target="_blank"
+                  class="tel"
+                  href="https://wa.me/5548999578886?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20com%20o%20Dr.%20Raphael!"
+                >
+                  (48) 99957-8886</a
+                >
+              </p>
+
               <address>
                 <a
                   target="_blank"
@@ -621,7 +646,9 @@
               <h3>Jaraguá do Sul</h3>
 
               <p>
-                <a href="tel:+5547999501531" class="tel">(47) 99950-1531</a>
+                <a target="_blank" href="tel:+5547999501531" class="tel"
+                  >(47) 99950-1531</a
+                >
               </p>
             </li>
 
@@ -629,7 +656,9 @@
               <h3>Pomerode</h3>
 
               <p>
-                <a href="tel:+5547997030506" class="tel">(47) 99703-0506</a>
+                <a target="_blank" href="tel:+5547997030506" class="tel"
+                  >(47) 99703-0506</a
+                >
               </p>
             </li>
           </ul>
@@ -663,9 +692,13 @@
           mais moderno na medicina a um atendimento humano, ético e reservado.
         </p>
 
-        <button href="#agendar" class="btn">
+        <a
+          target="_blank"
+          href="https://wa.me/5548999578886?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20com%20o%20Dr.%20Raphael!"
+          class="btn"
+        >
           Agendar avaliação com<br />Dr. Raphael
-        </button>
+        </a>
       </div>
     </section>
 
@@ -777,6 +810,8 @@
         window.addEventListener('resize', updateSliderPosition);
         updateSliderPosition();
 
+        // --- INÍCIO DA LÓGICA DE TOUCH (SWIPE) ---
+
         let isDragging = false;
         let startX = 0;
         let currentTranslate = 0;
@@ -785,42 +820,61 @@
         track.addEventListener('touchstart', touchStart);
         track.addEventListener('touchmove', touchMove);
         track.addEventListener('touchend', touchEnd);
-        track.addEventListener('touchcancel', touchEnd);
+        track.addEventListener('touchcancel', touchEnd); // Caso o toque seja interrompido
 
         function touchStart(event) {
+          // Verifica se o toque é na tela do slider (e não nos botões, se visíveis)
           if (window.innerWidth > 768) return;
 
           isDragging = true;
           startX = event.touches[0].clientX;
+
+          // Armazena a posição inicial do slider
           const transformMatrix = new WebKitCSSMatrix(
             window.getComputedStyle(track).transform,
           );
           prevTranslate = transformMatrix.m41;
+
+          // Remove a transição para que o slider siga o dedo instantaneamente
           track.style.transition = 'none';
         }
 
         function touchMove(event) {
           if (isDragging) {
             const currentX = event.touches[0].clientX;
+            // Calcula o deslocamento e aplica a transformação em tempo real
             currentTranslate = prevTranslate + currentX - startX;
             track.style.transform = `translateX(${currentTranslate}px)`;
           }
         }
+
         function touchEnd() {
           if (!isDragging) return;
+
           isDragging = false;
+          // Adiciona a transição de volta para um efeito suave de "snap"
           track.style.transition = 'transform 0.3s ease-out';
+
           const movedBy = currentTranslate - prevTranslate;
-          const swipeThreshold = 50;
+          const swipeThreshold = 50; // Mínimo de 50px de arrasto para trocar de slide
+
           const maxIndex = Math.max(0, cards.length - itemsVisible);
+
+          // Se arrastou para a esquerda o suficiente e não está no final
           if (movedBy < -swipeThreshold && currentIndex < maxIndex) {
             currentIndex++;
           }
+
+          // Se arrastou para a direita o suficiente e não está no início
           if (movedBy > swipeThreshold && currentIndex > 0) {
             currentIndex--;
           }
+
+          // Chama a função original para ajustar a posição final corretamente
           updateSliderPosition();
         }
+
+        // --- FIM DA LÓGICA DE TOUCH (SWIPE) ---
       });
     </script>
   </body>
