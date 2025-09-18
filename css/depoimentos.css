@@ -1,11 +1,10 @@
-/* cores (ajuste se tiver variáveis globais) */
 :root {
-  --deps-bg: #071736; /* navy do fundo */
+  --deps-bg: #071736;
   --card-bg: #fff;
   --text-card: #111;
-  --gold: #e3c99f; /* títulos/estrelas */
+  --gold: #e3c99f;
   --gold-cta: #e6c38f;
-  --gold-cta-2: #b88961; /* fim do gradiente do botão */
+  --gold-cta-2: #b88961;
 }
 
 /* seção */
@@ -15,6 +14,7 @@
   color: #fff;
   padding: clamp(56px, 8vw, 120px) min(4vw, 24px) clamp(56px, 8vw, 120px);
   overflow: hidden;
+  text-align: center;
 }
 
 /* glows topo/rodapé */
@@ -60,9 +60,8 @@
   opacity: 0.9;
 }
 
-.depoimentos button {
-  display: block;
-  margin: 0 auto;
+.depoimentos a {
+  display: inline-block;
 }
 
 /* --- Container Principal do Widget --- */
@@ -177,9 +176,8 @@
 .slider-controls {
   position: absolute;
   top: 50%;
-  /* Ajuste para que a largura não dependa dos filhos */
-  left: -520px;
-  right: -520px;
+  left: -10px;
+  right: -10px;
   display: flex;
   align-items: center;
   transform: translateY(-50%);
@@ -230,20 +228,20 @@
     max-width: calc(50% - 20px);
   }
   .slider-controls {
-    left: -490px;
-    right: -490px;
+    left: -10px;
+    right: -10px;
   }
 }
 @media (max-width: 1045px) {
   .slider-controls {
-    left: -450px;
-    right: -450px;
+    left: -10px;
+    right: -10px;
   }
 }
 @media (max-width: 925px) {
   .slider-controls {
-    left: -390px;
-    right: -390px;
+    left: -10px;
+    right: -10px;
   }
 }
 
