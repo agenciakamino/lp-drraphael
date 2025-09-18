@@ -777,8 +777,6 @@
         window.addEventListener('resize', updateSliderPosition);
         updateSliderPosition();
 
-        // --- INÍCIO DA LÓGICA DE TOUCH (SWIPE) ---
-
         let isDragging = false;
         let startX = 0;
         let currentTranslate = 0;
@@ -787,61 +785,42 @@
         track.addEventListener('touchstart', touchStart);
         track.addEventListener('touchmove', touchMove);
         track.addEventListener('touchend', touchEnd);
-        track.addEventListener('touchcancel', touchEnd); // Caso o toque seja interrompido
+        track.addEventListener('touchcancel', touchEnd);
 
         function touchStart(event) {
-          // Verifica se o toque é na tela do slider (e não nos botões, se visíveis)
           if (window.innerWidth > 768) return;
 
           isDragging = true;
           startX = event.touches[0].clientX;
-
-          // Armazena a posição inicial do slider
           const transformMatrix = new WebKitCSSMatrix(
             window.getComputedStyle(track).transform,
           );
           prevTranslate = transformMatrix.m41;
-
-          // Remove a transição para que o slider siga o dedo instantaneamente
           track.style.transition = 'none';
         }
 
         function touchMove(event) {
           if (isDragging) {
             const currentX = event.touches[0].clientX;
-            // Calcula o deslocamento e aplica a transformação em tempo real
             currentTranslate = prevTranslate + currentX - startX;
             track.style.transform = `translateX(${currentTranslate}px)`;
           }
         }
-
         function touchEnd() {
           if (!isDragging) return;
-
           isDragging = false;
-          // Adiciona a transição de volta para um efeito suave de "snap"
           track.style.transition = 'transform 0.3s ease-out';
-
           const movedBy = currentTranslate - prevTranslate;
-          const swipeThreshold = 50; // Mínimo de 50px de arrasto para trocar de slide
-
+          const swipeThreshold = 50;
           const maxIndex = Math.max(0, cards.length - itemsVisible);
-
-          // Se arrastou para a esquerda o suficiente e não está no final
           if (movedBy < -swipeThreshold && currentIndex < maxIndex) {
             currentIndex++;
           }
-
-          // Se arrastou para a direita o suficiente e não está no início
           if (movedBy > swipeThreshold && currentIndex > 0) {
             currentIndex--;
           }
-
-          // Chama a função original para ajustar a posição final corretamente
           updateSliderPosition();
         }
-
-        // --- FIM DA LÓGICA DE TOUCH (SWIPE) ---
       });
     </script>
   </body>
