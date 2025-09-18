@@ -2,8 +2,8 @@
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: clamp(420px, 70vh, 720px);
-  align-items: stretch; /* mantém as colunas com a mesma altura */
+  min-height: clamp(420px, 100vh, 760px);
+  align-items: stretch;
   isolation: isolate;
   overflow: hidden;
   gap: clamp(2rem, 6vw, 7rem);
@@ -43,12 +43,12 @@
 }
 
 .cirurgia-head .title-1 {
-  font-size: clamp(28px, 3.2vw, 36px);
+  font-size: clamp(32px, 3.2vw, 36px);
   letter-spacing: 0.2px;
 }
 .cirurgia-head .subtitle {
   margin: 0 0 1rem 0;
-  font-size: clamp(28px, 3.2vw, 36px);
+  font-size: clamp(32px, 3.2vw, 36px);
   color: #000;
 }
 
@@ -68,7 +68,7 @@
   color: #000;
   margin-top: 1.2rem;
   margin-bottom: 1rem;
-  font-size: clamp(28px, 3.2vw, 36px);
+  font-size: clamp(26px, 3.2vw, 32px);
   font-style: italic;
 }
 .lead em {
