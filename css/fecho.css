@@ -18,7 +18,6 @@
 /* esquerda: imagem grande */
 .fecho-media {
   background: url('../img/cta/raphael.jpg') center / cover no-repeat;
-  /* se quiser manter o foco mais pra esquerda/direita, ajuste o background-position */
 }
 
 /* direita: conteúdo */
@@ -32,14 +31,14 @@
 
 .fecho-title {
   margin: 0;
-  font-size: clamp(28px, 3.2vw, 38px);
+  font-size: clamp(26px, 3.1vw, 32px);
   line-height: 1.12;
   color: #111;
 }
 
 .fecho-lead {
   margin: 0;
-  font-size: clamp(28px, 3.2vw, 38px);
+  font-size: clamp(26px, 3.1vw, 32px);
   line-height: 1.18;
   color: #111;
 }
